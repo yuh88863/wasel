@@ -1,0 +1,421 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Space+Grotesk:wght@500&display=swap');
+:root{
+    /*### Primary*/
+
+--linearGradient : linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%)); /*(active input border)*/ 
+--red : hsl(0, 100%, 66%); /*(input errors)*/
+
+/*### Neutral*/
+
+--white: hsl(0, 0%, 100%);
+--lightGrayishViolet: hsl(270, 3%, 87%);
+--darkGrayishViolet: hsl(279, 6%, 55%);
+--veryDarkViolet: hsl(278, 68%, 11%);
+}
+
+
+*,*::after,*::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+      margin:  auto;
+    max-width: 1440px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.125rem;
+    font-family: 'Space Grotesk', sans-serif;
+}
+.wrapper{
+    display:flex;
+}
+
+.container{
+   margin: 0 auto;
+   transform: translateX(30%);
+}
+.bg-main-desktop{
+    max-width: 20rem;
+    padding-left: 0;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    
+}
+.bg-main-mobile{
+    display:none;
+    position: absolute;
+}
+.bg-card-front, 
+.card-logo,
+.card-number-img,
+.cardholder-exp-img,
+.cvc-img{
+    z-index: 100;
+}
+.card-container{
+   color: var(--white);
+   letter-spacing: 0.15rem;
+   font-size: 1.125rem;
+   margin-right: 10rem;
+}
+.bg-card-front,.bg-card-back{
+  max-width: 17.5rem;
+  width: 35%;
+}
+.bg-card-front{
+    position: absolute;
+    left: 13%;
+    top:50%;
+}
+.card-logo{
+    width: 3rem;
+    position: absolute;
+    left: 15%;
+    top: 51%;
+}
+ .card-number-img{
+    position: absolute;
+   left: 15%;
+    top: 54.5%;
+}
+.cardholder-exp-img{
+    display: flex;
+   gap: 1.2rem;
+    position: absolute;
+    top:56.5%;
+    left: 15%;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    color: var(--lightGrayishViolet);
+}
+
+.bg-card-back{
+    position: absolute;
+    left: 18%;
+    top: 60%;
+}
+.cvc-img{
+    font-size: 0.8rem;
+    position: absolute;
+    left: 40%;
+    top: 63.7%;
+}
+label{
+    font-size: 0.6rem;
+   text-transform: uppercase;
+}
+input{
+    font-size: 1.125rem;
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+     padding: 0.3rem 0.2rem;
+     border-radius: 0.4rem;
+     border: 1px solid var(--lightGrayishViolet);
+     color: var(--lightGrayishViolet);
+}
+input::placeholder{
+    color: var(--lightGrayishViolet);
+}
+
+input:focus{
+  outline: 1px solid var(--veryDarkViolet);
+  color:var(--veryDarkViolet);
+}
+input:valid{
+    color: var(--veryDarkViolet);
+}
+.errorFormat{
+    font-size: 0.7rem;
+    color:var(--red);
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+   visibility: hidden;
+}
+.form, .thank-you{
+    max-width: 20rem;
+    width: 100%;
+    
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  
+}
+.exp-date-cvc{
+    display: flex;
+    gap: 1rem;
+align-items: baseline;
+}
+
+.exp-date-input{
+    display: flex;
+    gap:0.3rem;
+}
+
+#month, #year{
+  max-width: 4rem;
+  width: 100%;
+}
+.right{
+    display: flex;
+    flex-direction: column;
+    
+}
+#cvc{
+    max-width: 12rem;
+    width: 100%;
+}
+
+.confirm-btn{
+    padding: 0.7rem 2rem;
+    border-radius: 0.6rem;
+    border:none;
+    background-color: var(--veryDarkViolet);
+    color: var(--white);
+    width: 100%;
+    margin-top: 2rem;
+}
+.confirm-btn:hover{
+    filter:grayscale(40%);
+}
+.thank-you{
+    
+    display: none;
+    flex-direction: column;
+     text-align: center;
+     gap: 2rem;
+}
+.thank-you-img{
+    width: 20%;
+    margin: auto;
+}
+.thank-you h1{
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+.thank-you p{
+    font-size: 0.9rem;
+   color: var(--darkGrayishViolet);
+}
+.attribution{
+    margin-top: 4rem;
+}
+
+@media (min-width:300px) and (max-width: 394px){
+      .wrapper{
+         
+          flex-direction: column;
+         
+    
+      }
+      .container{
+          margin: 0 auto;
+          transform: translateY(40%);
+      }
+        .bg-main-desktop{
+        display: none;
+    }
+    .bg-main-mobile{
+    display: flex;
+    flex-direction: column;
+    height: 30%;
+    width: 100%;
+    top:0;
+    left: 0;
+    
+}
+  
+ 
+.bg-card-front, .bg-card-back{
+    max-width: 18.5rem;
+    width: 100%;
+}
+
+.bg-card-front{
+   top: 16%;
+  left: 8%;
+}
+.card-logo{
+  top: 20%;
+
+}
+.card-number-img{
+   top: 28%;
+}
+.cardholder-exp-img{
+ 
+  margin-left: -1.1rem;
+    font-size: 0.6rem;
+    top: 33%;
+    left:20%;
+}
+.bg-card-back{
+    top:3%;
+}
+.cvc-img{
+   position: absolute;
+   top: 13%;
+   left: 78%;
+    font-size: 0.6rem;
+}
+
+.form{
+    
+    display: flex;
+    width: 18rem;
+}
+.thank-you{
+    display: none;
+   width: 20rem;
+}
+.thank-you h1{
+    font-size: 1.5rem;
+}
+
+ .confirm-btn{
+    
+    padding: 1.3rem 0.6rem;
+    font-size: 1.2rem;
+}
+.exp-date-cvc{
+    width: 100%;
+}
+
+}
+
+@media (min-width: 395px) and (max-width: 800px){
+    .bg-card-back{
+         position: absolute;
+         left: 60%;
+         top: 37%;
+    }
+   .bg-card-front{
+       position: absolute;
+       top: -22%;
+   }
+    .card-logo{
+        position: absolute;
+        top:-20%;
+    }
+    .card-number-img{
+        position: absolute;
+        top: -13%;
+    }
+    .cardholder-exp-img{
+        position: absolute;
+        top: -5%;
+    }
+    .cvc-img{
+        position: absolute;
+        top: 29%;
+        left: 90%;
+    }
+    .container{
+        margin-top: 7rem;
+    }
+} 
+/*for other media screen*/
+/*
+@media (min-width: 395px) and (max-width: 800px){
+        body{
+        flex-direction: column;
+    }
+        .bg-main-desktop{
+        display: none;
+    }
+    .bg-main-mobile{
+    display: flex;
+    height: 32%;
+}
+   .container{
+       margin: 2rem auto;
+   }   
+ 
+.bg-card-front, .bg-card-back{
+    max-width: 18.5rem;
+    width: 100%;
+}
+
+.bg-card-front{
+    transform: translate(-12%,50%);
+}
+.card-logo{
+   transform: translate(-43%,350%);
+}
+.card-number-img{
+   transform: translate(-8%,600%);
+}
+.cardholder-exp-img{
+   margin-top: 10rem;
+  margin-left: -1.1rem;
+    font-size: 0.6rem;
+}
+.bg-card-back{
+    transform: translate(1%,-61%);
+}
+.cvc-img{
+   position: absolute;
+   top: 14.6%;
+   left: 78%;
+    font-size: 0.6rem;
+}
+
+.form{
+    display: flex;
+    width: 20rem;
+}
+.thank-you{
+    display: none;
+   width: 20rem;
+}
+.thank-you h1{
+    font-size: 1.5rem;
+}
+
+ .confirm-btn{
+    
+    padding: 1.3rem 0.6rem;
+    font-size: 1.2rem;
+}
+.exp-date-cvc{
+    width: 100%;
+}
+
+}
+@media (min-width: 979px) and (max-width: 1100px){
+  
+    .bg-card-front{
+        position: absolute;
+        top:10%;
+    }
+    .card-logo{
+        position: absolute;
+        top:15%;
+    }
+    .card-number-img{
+        position: absolute;
+        top: 35%;
+    }
+    .cardholder-exp-img{
+        position: absolute;
+        top: 45%;
+    }
+    .bg-card-back{
+        position: absolute;
+        top: 65%;
+    }
+    .cvc-img{
+        position: absolute;
+        top: 83%;
+    }
+    .container{
+        margin-top: 4rem;
+    }
+}*/

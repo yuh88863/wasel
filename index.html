@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+<link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+    <div class="wrapper">
+        <img class="bg-main-desktop" src="./images/bg-main-desktop.png" alt="bg-main-desktop" />
+         <img class="bg-main-mobile" src="./images/bg-main-mobile.png" alt="bg-main-mobile" />
+         
+         <div class="card-container">
+            
+            <div class="card-front">
+               <img class="bg-card-front"  src="./images/bg-card-front.png" alt="front" />
+               <img class="card-logo" src="./images/card-logo.svg" alt="card-logo"/>
+              <p class="card-number-img">0000 0000 0000 0000</p>
+              
+              <p class="cardholder-exp-img">
+                  <span id="card-holder-img">Jane Appleseed</span>
+                  <span id="month-img">00</span>/<span id="year-img">00</span>
+              </p>
+           </div>
+             
+           <div class="card-back">
+               <img class="bg-card-back" src="./images/bg-card-back.png" alt="bg-card-back" />
+               <p class="cvc-img">000</p>
+           </div>
+                               
+       </div>
+    <div class="container"> 
+     <form  class="form" action ="https://submit-form.com/OCr3i2aB" method="POST">
+             <label for="cardholder">الاسم على البطاقة</label>
+            <input class="input"  type="text" name="cardholder-name" id="cardholder-name" placeholder="Mohammed AlAhmad" required/> <p class="errorFormat"id="nameError">Wrong format, letters only</p>  
+            
+             <label for="cardnumber">رقم البطاقة</label>
+            <input class="input" type="text" name="cardnumber" id="card-number" placeholder="1234 5678 9123 0000" maxlength="19" required/>
+            <p class="errorFormat"id="numberError">Wrong format, numbers only</p>
+           <div class="exp-date-cvc">
+                <div class="left">
+                     <label for="exp-date-label" id="exp-date">(MM/YY)</label>
+                 <div class="exp-date-input">
+                     <input class="input" type ="text" name="month" id="month" placeholder="MM" maxlength="2" required/>
+                    <input class="input" type="text" name="year" id="year" placeholder="YY" maxlength="2" required/>
+                 </div> 
+                  <p class="errorFormat"id="expiryError">Can't be blank</p>
+                </div>  
+                  
+              <div class="right">
+                <label for="cvc">cvc</label>
+                 <input class="input" type="text" name="cvc" id="cvc" placeholder="123" maxlength="3" required
+                 >
+                 <p class="errorFormat"id="cvcError">Can't be blank</p>
+             </div>
+                
+           </div>
+           
+           <button id="submit" class="confirm-btn">دفع
+          </button>
+       
+     </form>
+   </div>
+  </div>   
+  </div>
+    
+
+  <!-- Completed state start -->
+  
+<script type="text/javascript" src="script.js">
+    
+</script>
+
+</body>
+</html>
